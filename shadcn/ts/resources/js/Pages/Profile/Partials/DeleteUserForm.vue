@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { Button } from '@/Components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/Components/ui/card'
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/Components/ui/dialog'
 import { Input } from '@/Components/ui/input'
 import { Label } from '@/Components/ui/label'
 
-import Modal from '@/Components/Modal.vue';
 import { useForm } from '@inertiajs/vue3';
 import { nextTick, ref } from 'vue';
 
@@ -37,6 +37,12 @@ const closeModal = () => {
 
     form.reset();
 };
+
+const handleDialogState = (isOpen: boolean) => {
+    if (!isOpen) {
+        form.reset();
+    }
+};
 </script>
 
 <template>
@@ -51,23 +57,21 @@ const closeModal = () => {
         </CardHeader>
 
         <CardContent>
-            <!-- Danger Button -->
-            <Button variant="destructive" @click="confirmUserDeletion">Delete Account</Button>
-        </CardContent>
+            <Dialog @update:open="handleDialogState">
+                <DialogTrigger>
+                    <!-- Danger Button -->
+                    <Button variant="destructive" @click="confirmUserDeletion">Delete Account</Button>
+                </DialogTrigger>
+                <DialogContent class="w-full max-w-2xl">
+                    <DialogHeader>
+                        <DialogTitle>Are you sure you want to delete your account?</DialogTitle>
+                        <DialogDescription>
+                            Once your account is deleted, all of its resources and data will be permanently deleted. Please
+                            enter your password to confirm you would like to permanently delete your account.
+                        </DialogDescription>
+                    </DialogHeader>
 
-        <Modal :show="confirmingUserDeletion" @close="closeModal">
-            <Card>
-                <CardHeader>
-                    <CardTitle>Are you sure you want to delete your account?</CardTitle>
-
-                    <CardDescription>
-                        Once your account is deleted, all of its resources and data will be permanently deleted. Please
-                        enter your password to confirm you would like to permanently delete your account.
-                    </CardDescription>
-                </CardHeader>
-
-                <CardContent>
-                    <div class="mt-6">
+                    <div>
                         <Label for="password" class="sr-only">Password</Label>
 
                         <Input
@@ -87,23 +91,25 @@ const closeModal = () => {
                         </div>
                     </div>
 
-                    <div class="mt-6 flex justify-end">
-                        <!-- Secondary Button -->
-                        <Button variant="secondary" @click="closeModal"> Cancel </Button>
+                    <DialogFooter>
+                        <div class="flex justify-end">
+                            <!-- Secondary Button -->
+                            <Button variant="secondary" @click="closeModal"> Cancel </Button>
 
-                        <!-- Danger Button -->
-                        <Button
-                            variant="destructive"
-                            class="ms-3"
-                            :class="{ 'opacity-25': form.processing }"
-                            :disabled="form.processing"
-                            @click="deleteUser"
-                        >
-                            Delete Account
-                        </Button>
-                    </div>
-                </CardContent>
-            </Card>
-        </Modal>
+                            <!-- Danger Button -->
+                            <Button
+                                variant="destructive"
+                                class="ms-3"
+                                :class="{ 'opacity-25': form.processing }"
+                                :disabled="form.processing"
+                                @click="deleteUser"
+                            >
+                                Delete Account
+                            </Button>
+                        </div>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
+        </CardContent>
     </Card>
 </template>
