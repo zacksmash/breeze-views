@@ -1,7 +1,5 @@
 <script setup>
-// TODO: Replace Modal
 import Modal from '@/Components/Modal.vue';
-
 import { useForm } from '@inertiajs/vue3';
 import { nextTick, ref } from 'vue';
 
