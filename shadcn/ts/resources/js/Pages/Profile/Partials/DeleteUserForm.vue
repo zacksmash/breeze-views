@@ -1,41 +1,27 @@
 <script setup lang="ts">
 import { Button } from '@/Components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/Components/ui/card'
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/Components/ui/dialog'
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/Components/ui/dialog'
 import { Input } from '@/Components/ui/input'
 import { Label } from '@/Components/ui/label'
 
 import { useForm } from '@inertiajs/vue3';
-import { nextTick, ref } from 'vue';
+import { ref } from 'vue';
 
-const confirmingUserDeletion = ref(false);
 const passwordInput = ref<HTMLInputElement | null>(null);
 
 const form = useForm({
     password: '',
 });
 
-const confirmUserDeletion = () => {
-    confirmingUserDeletion.value = true;
-
-    nextTick(() => passwordInput.value?.focus());
-};
-
 const deleteUser = () => {
     form.delete(route('profile.destroy'), {
         preserveScroll: true,
-        onSuccess: () => closeModal(),
         onError: () => passwordInput.value?.focus(),
         onFinish: () => {
             form.reset();
         },
     });
-};
-
-const closeModal = () => {
-    confirmingUserDeletion.value = false;
-
-    form.reset();
 };
 
 const handleDialogState = (isOpen: boolean) => {
@@ -60,7 +46,7 @@ const handleDialogState = (isOpen: boolean) => {
             <Dialog @update:open="handleDialogState">
                 <DialogTrigger>
                     <!-- Danger Button -->
-                    <Button variant="destructive" @click="confirmUserDeletion">Delete Account</Button>
+                    <Button variant="destructive">Delete Account</Button>
                 </DialogTrigger>
                 <DialogContent class="w-full max-w-2xl">
                     <DialogHeader>
@@ -71,7 +57,7 @@ const handleDialogState = (isOpen: boolean) => {
                         </DialogDescription>
                     </DialogHeader>
 
-                    <div>
+                    <div class="mt-2">
                         <Label for="password" class="sr-only">Password</Label>
 
                         <Input
@@ -92,9 +78,11 @@ const handleDialogState = (isOpen: boolean) => {
                     </div>
 
                     <DialogFooter>
-                        <div class="flex justify-end">
+                        <div class="flex justify-end mt-2">
                             <!-- Secondary Button -->
-                            <Button variant="secondary" @click="closeModal"> Cancel </Button>
+                            <DialogClose as-child>
+                              <Button variant="secondary"> Cancel </Button>
+                            </DialogClose>
 
                             <!-- Danger Button -->
                             <Button
