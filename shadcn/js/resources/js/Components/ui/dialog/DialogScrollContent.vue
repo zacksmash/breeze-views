@@ -1,14 +1,14 @@
 <script setup>
-import { computed } from "vue";
+import { computed } from 'vue'
 import {
   DialogClose,
   DialogContent,
   DialogOverlay,
   DialogPortal,
   useForwardPropsEmits,
-} from "radix-vue";
-import { X } from "lucide-vue-next";
-import { cn } from "@/Lib/utils";
+} from 'radix-vue'
+import { X } from 'lucide-vue-next'
+import { cn } from '@/Lib/utils'
 
 const props = defineProps({
   forceMount: { type: Boolean, required: false },
@@ -17,23 +17,23 @@ const props = defineProps({
   asChild: { type: Boolean, required: false },
   as: { type: null, required: false },
   class: { type: null, required: false },
-});
+})
 const emits = defineEmits([
-  "escapeKeyDown",
-  "pointerDownOutside",
-  "focusOutside",
-  "interactOutside",
-  "openAutoFocus",
-  "closeAutoFocus",
-]);
+  'escapeKeyDown',
+  'pointerDownOutside',
+  'focusOutside',
+  'interactOutside',
+  'openAutoFocus',
+  'closeAutoFocus',
+])
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props;
+  const { class: _, ...delegated } = props
 
-  return delegated;
-});
+  return delegated
+})
 
-const forwarded = useForwardPropsEmits(delegatedProps, emits);
+const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
 
 <template>
@@ -43,10 +43,10 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
     >
       <DialogContent
         :class="
-cn(
-  'relative z-50 grid w-full max-w-lg my-8 gap-4 border border-slate-200 bg-white p-6 shadow-lg duration-200 sm:rounded-lg md:w-full dark:border-slate-800 dark:bg-slate-950',
-  props.class
-)"
+          cn(
+            'relative z-50 grid w-full max-w-lg my-8 gap-4 border border-slate-200 bg-white p-6 shadow-lg duration-200 sm:rounded-lg md:w-full dark:border-slate-800 dark:bg-slate-950',
+            props.class
+          )"
         v-bind="forwarded"
         @pointer-down-outside="
           (event) => {
@@ -64,9 +64,10 @@ cn(
         <slot />
 
         <DialogClose
-          class="absolute top-3 right-3 p-0.5 transition-colors rounded-md hover:bg-slate-100 dark:hover:bg-slate-800"
+          class="absolute right-3 top-3 rounded-md p-0.5 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
         >
-          <X class="w-4 h-4" />
+          <X class="size-4" />
+
           <span class="sr-only">Close</span>
         </DialogClose>
       </DialogContent>

@@ -1,9 +1,9 @@
 <script setup>
-import { cn } from "@/Lib/utils";
+import { cn } from '@/Lib/utils'
 
 const props = defineProps({
   class: { type: null, required: false },
-});
+})
 </script>
 
 <template>

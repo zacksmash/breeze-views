@@ -3,14 +3,21 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "lint": "eslint . --fix"
     },
     "devDependencies": {
+        "@eslint/js": "^9.9.1",
         "@inertiajs/vue3": "^1.0.0",
         "@tailwindcss/forms": "^0.5.3",
         "@vitejs/plugin-vue": "^5.0.0",
         "autoprefixer": "^10.4.12",
         "axios": "^1.6.4",
+        "eslint": "^9.9.1",
+        "eslint-plugin-modules-newlines": "github:ruudandriessen/eslint-plugin-modules-newline",
+        "eslint-plugin-tailwindcss": "^3.17.4",
+        "eslint-plugin-vue": "^9.27.0",
+        "globals": "^15.9.0",
         "laravel-vite-plugin": "^1.0",
         "postcss": "^8.4.31",
         "tailwindcss": "^3.2.1",
