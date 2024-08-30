@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
+import {
+  type HTMLAttributes,
+  computed,
+} from 'vue'
 import {
   DropdownMenuContent,
   type DropdownMenuContentEmits,

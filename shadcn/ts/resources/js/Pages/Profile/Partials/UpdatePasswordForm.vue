@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { Button } from '@/Components/ui/button'
 import {
-  Card, CardContent, CardDescription, CardHeader, CardTitle,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
 } from '@/Components/ui/card'
 import { Input } from '@/Components/ui/input'
 import { Label } from '@/Components/ui/label'

@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { Home } from 'lucide-vue-next'
 import {
-  Card, CardDescription, CardHeader, CardTitle,
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
 } from '@/Components/ui/card'
 
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'

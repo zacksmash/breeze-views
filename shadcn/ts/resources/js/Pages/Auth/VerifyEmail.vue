@@ -1,13 +1,19 @@
 <script setup lang="ts">
 import { Button } from '@/Components/ui/button'
 import {
-  Card, CardContent, CardDescription, CardHeader, CardTitle,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
 } from '@/Components/ui/card'
 
 import { computed } from 'vue'
 import GuestLayout from '@/Layouts/GuestLayout.vue'
 import {
-  Head, Link, useForm,
+  Head,
+  Link,
+  useForm,
 } from '@inertiajs/vue3'
 
 const props = defineProps<{

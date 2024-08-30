@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { Button } from '@/Components/ui/button'
 import {
-  Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
 } from '@/Components/ui/card'
 import { Input } from '@/Components/ui/input'
 import { Label } from '@/Components/ui/label'
@@ -9,7 +14,9 @@ import { Checkbox } from '@/Components/ui/checkbox'
 
 import GuestLayout from '@/Layouts/GuestLayout.vue'
 import {
-  Head, Link, useForm,
+  Head,
+  Link,
+  useForm,
 } from '@inertiajs/vue3'
 
 defineProps<{

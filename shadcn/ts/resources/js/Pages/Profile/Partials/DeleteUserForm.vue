@@ -1,10 +1,21 @@
 <script setup lang="ts">
 import { Button } from '@/Components/ui/button'
 import {
-  Card, CardContent, CardDescription, CardHeader, CardTitle,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
 } from '@/Components/ui/card'
 import {
-  Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger,
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
 } from '@/Components/ui/dialog'
 import { Input } from '@/Components/ui/input'
 import { Label } from '@/Components/ui/label'

@@ -1,4 +1,7 @@
-import { type VariantProps, cva } from 'class-variance-authority'
+import {
+  type VariantProps,
+  cva,
+} from 'class-variance-authority'
 
 export { default as Sheet } from './Sheet.vue'
 export { default as SheetTrigger } from './SheetTrigger.vue'

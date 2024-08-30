@@ -1,7 +1,12 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
 import {
-  DialogDescription, type DialogDescriptionProps, useForwardProps,
+  type HTMLAttributes,
+  computed,
+} from 'vue'
+import {
+  DialogDescription,
+  type DialogDescriptionProps,
+  useForwardProps,
 } from 'radix-vue'
 import { cn } from '@/Lib/utils'
 

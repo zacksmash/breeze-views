@@ -3,6 +3,7 @@ import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginVue from "eslint-plugin-vue";
 import pluginTailwind from 'eslint-plugin-tailwindcss'
+import pluginNewLines from 'eslint-plugin-modules-newlines'
 
 export default [
     {
@@ -33,6 +34,7 @@ export default [
     {
         plugins: {
             'tailwindcss': pluginTailwind,
+            'modules-newlines': pluginNewLines,
         },
         rules: {
             'comma-dangle': ['error', 'always-multiline'],
@@ -70,6 +72,9 @@ export default [
             'no-trailing-spaces': ['error'],
 
             '@typescript-eslint/no-unused-vars': 'off',
+
+            'modules-newlines/import-declaration-newline': 'warn',
+            'modules-newlines/export-declaration-newline': 'warn',
 
             'tailwindcss/classnames-order': 'warn',
             'tailwindcss/enforces-negative-arbitrary-values': 'warn',

@@ -1,4 +1,7 @@
-import { type VariantProps, cva } from 'class-variance-authority'
+import {
+  type VariantProps,
+  cva,
+} from 'class-variance-authority'
 
 export { default as Alert } from './Alert.vue'
 export { default as AlertTitle } from './AlertTitle.vue'
