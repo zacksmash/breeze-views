@@ -28,7 +28,7 @@ import { Link } from '@inertiajs/vue3'
 </script>
 
 <template>
-  <div>
+  <div class="min-h-screen bg-white dark:bg-slate-950">
     <!-- Primary Navigation Menu -->
     <header class="sticky top-0 border-b px-4 dark:border-slate-800 sm:px-6">
       <div class="mx-auto flex h-16 max-w-7xl items-center gap-4">
@@ -111,20 +111,24 @@ import { Link } from '@inertiajs/vue3'
 
               <DropdownMenuSeparator />
 
-              <Link :href="route('profile.edit')">
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-              </Link>
+              <DropdownMenuItem as-child>
+                <Link :href="route('profile.edit')">
+                  Profile
+                </Link>
+              </DropdownMenuItem>
 
               <DropdownMenuSeparator />
 
-              <Link
-                :href="route('logout')"
-                method="post"
-                as="button"
-                class="w-full"
-              >
-                <DropdownMenuItem>Log Out</DropdownMenuItem>
-              </Link>
+              <DropdownMenuItem as-child>
+                <Link
+                  :href="route('logout')"
+                  method="post"
+                  as="button"
+                  class="w-full"
+                >
+                  Log Out
+                </Link>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
