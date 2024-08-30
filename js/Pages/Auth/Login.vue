@@ -46,7 +46,11 @@ const submit = () => {
                     autocomplete="username"
                 />
 
-                <span v-show="form.errors.email" v-text="form.errors.email" />
+                <div class="mt-2" v-show="form.errors.email">
+                    <p class="text-sm text-red-600">
+                        {{ form.errors.email }}
+                    </p>
+                </div>
             </div>
 
             <div class="mt-4">
@@ -61,13 +65,17 @@ const submit = () => {
                     autocomplete="current-password"
                 />
 
-                <span v-show="form.errors.password" v-text="form.errors.password" />
+                <div class="mt-2" v-show="form.errors.password">
+                    <p class="text-sm text-red-600">
+                        {{ form.errors.password }}
+                    </p>
+                </div>
             </div>
 
             <div class="block mt-4">
                 <label class="flex items-center">
                     <input type="checkbox" name="remember" v-model="form.remember" />
-                    <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">Remember me</span>
+                    <span class="ms-2 text-sm text-gray-600">Remember me</span>
                 </label>
             </div>
 
@@ -75,7 +83,7 @@ const submit = () => {
                 <Link
                     v-if="canResetPassword"
                     :href="route('password.request')"
-                    class="underline text-sm text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                     Forgot your password?
                 </Link>

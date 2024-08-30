@@ -39,12 +39,11 @@ const closeModal = () => {
         <header>
             <h2 class="text-lg">Delete Account</h2>
 
-            <p>
+            <p class="mt-1">
                 Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting
                 your account, please download any data or information that you wish to retain.
             </p>
         </header>
-
 
         <!-- Danger Button -->
         <button @click="confirmUserDeletion">Delete Account</button>
@@ -55,7 +54,7 @@ const closeModal = () => {
                     Are you sure you want to delete your account?
                 </h2>
 
-                <p>
+                <p class="mt-1">
                     Once your account is deleted, all of its resources and data will be permanently deleted. Please
                     enter your password to confirm you would like to permanently delete your account.
                 </p>
@@ -66,14 +65,18 @@ const closeModal = () => {
                     <input
                         id="password"
                         ref="passwordInput"
-                        class="mt-1 block w-3/4"
                         v-model="form.password"
                         type="password"
+                        class="mt-1 block w-3/4"
                         placeholder="Password"
                         @keyup.enter="deleteUser"
                     />
 
-                    <span v-show="form.errors.password" v-text="form.errors.password" />
+                    <div class="mt-2" v-show="form.errors.password">
+                        <p class="text-sm text-red-600">
+                            {{ form.errors.password }}
+                        </p>
+                    </div>
                 </div>
 
                 <div class="mt-6 flex justify-end">

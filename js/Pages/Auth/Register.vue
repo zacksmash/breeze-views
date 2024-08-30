@@ -34,7 +34,11 @@ const submit = () => {
                     autocomplete="name"
                 />
 
-                <span v-show="form.errors.name" v-text="form.errors.name" />
+                <div class="mt-2" v-show="form.errors.name">
+                    <p class="text-sm text-red-600">
+                        {{ form.errors.name }}
+                    </p>
+                </div>
             </div>
 
             <div class="mt-4">
@@ -49,7 +53,11 @@ const submit = () => {
                     autocomplete="username"
                 />
 
-                <span v-show="form.errors.email" v-text="form.errors.email" />
+                <div class="mt-2" v-show="form.errors.email">
+                    <p class="text-sm text-red-600">
+                        {{ form.errors.email }}
+                    </p>
+                </div>
             </div>
 
             <div class="mt-4">
@@ -64,7 +72,11 @@ const submit = () => {
                     autocomplete="new-password"
                 />
 
-                <span v-show="form.errors.password" v-text="form.errors.password" />
+                <div class="mt-2" v-show="form.errors.password">
+                    <p class="text-sm text-red-600">
+                        {{ form.errors.password }}
+                    </p>
+                </div>
             </div>
 
             <div class="mt-4">
@@ -79,13 +91,17 @@ const submit = () => {
                     autocomplete="new-password"
                 />
 
-                <span v-show="form.errors.password_confirmation" v-text="form.errors.password_confirmation" />
+                <div class="mt-2" v-show="form.errors.password_confirmation">
+                    <p class="text-sm text-red-600">
+                        {{ form.errors.password_confirmation }}
+                    </p>
+                </div>
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 <Link
                     :href="route('login')"
-                    class="underline text-sm text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                     Already registered?
                 </Link>

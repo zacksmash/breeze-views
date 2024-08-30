@@ -21,10 +21,10 @@ const submit = () => {
     <GuestLayout>
         <Head title="Forgot Password" />
 
-        <p>
+        <div class="mb-4">
             Forgot your password? No problem. Just let us know your email address and we will email you a password reset
             link that will allow you to choose a new one.
-        </p>
+        </div>
 
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}
@@ -44,7 +44,11 @@ const submit = () => {
                     autocomplete="username"
                 />
 
-                <span v-show="form.errors.email" v-text="form.errors.email" />
+                <div class="mt-2" v-show="form.errors.email">
+                    <p class="text-sm text-red-600">
+                        {{ form.errors.email }}
+                    </p>
+                </div>
             </div>
 
             <div class="flex items-center justify-end mt-4">

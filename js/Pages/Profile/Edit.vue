@@ -19,7 +19,7 @@ defineProps({
     <Head title="Profile" />
 
     <AuthenticatedLayout>
-        <div class="space-y-6 px-6 mt-6">
+        <div class="space-y-6">
             <div class="border p-6">
                 <UpdateProfileInformationForm
                     :must-verify-email="mustVerifyEmail"
@@ -27,9 +27,11 @@ defineProps({
                     class="max-w-xl"
                 />
             </div>
+
             <div class="border p-6">
                 <UpdatePasswordForm class="max-w-xl" />
             </div>
+
             <div class="border p-6">
                 <DeleteUserForm class="max-w-xl" />
             </div>

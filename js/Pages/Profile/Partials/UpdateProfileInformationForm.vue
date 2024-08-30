@@ -23,7 +23,7 @@ const form = useForm({
         <header>
             <h2 class="text-lg">Profile Information</h2>
 
-            <p>
+            <p class="mt-1">
                 Update your account's profile information and email address.
             </p>
         </header>
@@ -42,7 +42,11 @@ const form = useForm({
                     autocomplete="name"
                 />
 
-                <span v-show="form.errors.name" v-text="form.errors.name" />
+                <div class="mt-2" v-show="form.errors.name">
+                    <p class="text-sm text-red-600">
+                        {{ form.errors.name }}
+                    </p>
+                </div>
             </div>
 
             <div>
@@ -57,17 +61,21 @@ const form = useForm({
                     autocomplete="username"
                 />
 
-                <span v-show="form.errors.email" v-text="form.errors.email" />
+                <div class="mt-2" v-show="form.errors.email">
+                    <p class="text-sm text-red-600">
+                        {{ form.errors.email }}
+                    </p>
+                </div>
             </div>
 
             <div v-if="mustVerifyEmail && user.email_verified_at === null">
-                <p>
+                <p class="text-sm mt-2 text-gray-800">
                     Your email address is unverified.
                     <Link
                         :href="route('verification.send')"
                         method="post"
                         as="button"
-                        class="underline text-sm text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
                         Click here to re-send the verification email.
                     </Link>
@@ -82,7 +90,7 @@ const form = useForm({
             </div>
 
             <div class="flex items-center gap-4">
-                <!--  -->
+                <!-- Primary Button -->
                 <button :disabled="form.processing">Save</button>
 
                 <Transition
@@ -91,7 +99,7 @@ const form = useForm({
                     leave-active-class="transition ease-in-out"
                     leave-to-class="opacity-0"
                 >
-                    <p v-if="form.recentlySuccessful" class="text-sm">Saved.</p>
+                    <p v-if="form.recentlySuccessful" class="text-sm text-gray-600">Saved.</p>
                 </Transition>
             </div>
         </form>

@@ -34,7 +34,7 @@ const updatePassword = () => {
         <header>
             <h2 class="text-lg">Update Password</h2>
 
-            <p>
+            <p class="mt-1">
                 Ensure your account is using a long, random password to stay secure.
             </p>
         </header>
@@ -46,13 +46,17 @@ const updatePassword = () => {
                 <input
                     id="current_password"
                     ref="currentPasswordInput"
-                    class="mt-1 block w-full"
                     v-model="form.current_password"
                     type="password"
+                    class="mt-1 block w-full"
                     autocomplete="current-password"
                 />
 
-                <span v-show="form.errors.current_password" v-text="form.errors.current_password" />
+                <div class="mt-2" v-show="form.errors.current_password">
+                    <p class="text-sm text-red-600">
+                        {{ form.errors.current_password }}
+                    </p>
+                </div>
             </div>
 
             <div>
@@ -61,13 +65,17 @@ const updatePassword = () => {
                 <input
                     id="password"
                     ref="passwordInput"
-                    class="mt-1 block w-full"
                     v-model="form.password"
                     type="password"
+                    class="mt-1 block w-full"
                     autocomplete="new-password"
                 />
 
-                <span v-show="form.errors.password" v-text="form.errors.password" />
+                <div class="mt-2" v-show="form.errors.password">
+                    <p class="text-sm text-red-600">
+                        {{ form.errors.password }}
+                    </p>
+                </div>
             </div>
 
             <div>
@@ -75,13 +83,17 @@ const updatePassword = () => {
 
                 <input
                     id="password_confirmation"
-                    class="mt-1 block w-full"
                     v-model="form.password_confirmation"
                     type="password"
+                    class="mt-1 block w-full"
                     autocomplete="new-password"
                 />
 
-                <span v-show="form.errors.password_confirmation" v-text="form.errors.password_confirmation" />
+                <div class="mt-2" v-show="form.errors.password_confirmation">
+                    <p class="text-sm text-red-600">
+                        {{ form.errors.password_confirmation }}
+                    </p>
+                </div>
             </div>
 
             <div class="flex items-center gap-4">
@@ -94,7 +106,7 @@ const updatePassword = () => {
                     leave-active-class="transition ease-in-out"
                     leave-to-class="opacity-0"
                 >
-                    <p v-if="form.recentlySuccessful" class="text-sm">Saved.</p>
+                    <p v-if="form.recentlySuccessful" class="text-sm text-gray-600">Saved.</p>
                 </Transition>
             </div>
         </form>

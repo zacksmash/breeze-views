@@ -17,9 +17,9 @@ const submit = () => {
     <GuestLayout>
         <Head title="Confirm Password" />
 
-        <p>
+        <div class="mb-4">
             This is a secure area of the application. Please confirm your password before continuing.
-        </p>
+        </div>
 
         <form @submit.prevent="submit">
             <div>
@@ -35,11 +35,15 @@ const submit = () => {
                     autofocus
                 />
 
-                <span v-show="form.errors.password" :message="form.errors.password" />
+                <div class="mt-2" v-show="form.errors.password">
+                    <p class="text-sm text-red-600">
+                        {{ form.errors.password }}
+                    </p>
+                </div>
             </div>
 
             <div class="flex justify-end mt-4">
-                <!-- Primary Button -->
+                <!-- Button -->
                 <button class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Confirm
                 </button>

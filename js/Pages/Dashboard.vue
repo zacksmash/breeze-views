@@ -7,8 +7,6 @@ import { Head } from '@inertiajs/vue3';
     <Head title="Dashboard" />
 
     <AuthenticatedLayout>
-        <div>
-            <p>Dashboard</p>
-        </div>
+        <div class="border p-6">You're logged in!</div>
     </AuthenticatedLayout>
 </template>

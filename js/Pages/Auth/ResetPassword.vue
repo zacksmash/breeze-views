@@ -41,11 +41,15 @@ const submit = () => {
                     class="mt-1 block w-full"
                     v-model="form.email"
                     required
-                    :autofocus="!form.email"
+                    autofocus
                     autocomplete="username"
                 />
 
-                <span v-show="form.errors.email" v-text="form.errors.email" />
+                <div class="mt-2" v-show="form.errors.email">
+                    <p class="text-sm text-red-600">
+                        {{ form.errors.email }}
+                    </p>
+                </div>
             </div>
 
             <div class="mt-4">
@@ -57,11 +61,14 @@ const submit = () => {
                     class="mt-1 block w-full"
                     v-model="form.password"
                     required
-                    :autofocus="form.email"
                     autocomplete="new-password"
                 />
 
-                <span v-show="form.errors.password" v-text="form.errors.password" />
+                <div class="mt-2" v-show="form.errors.password">
+                    <p class="text-sm text-red-600">
+                        {{ form.errors.password }}
+                    </p>
+                </div>
             </div>
 
             <div class="mt-4">
@@ -76,10 +83,15 @@ const submit = () => {
                     autocomplete="new-password"
                 />
 
-                <span v-show="form.errors.password_confirmation" v-text="form.errors.password_confirmation" />
+                <div class="mt-2" v-show="form.errors.password_confirmation">
+                    <p class="text-sm text-red-600">
+                        {{ form.errors.password_confirmation }}
+                    </p>
+                </div>
             </div>
 
             <div class="flex items-center justify-end mt-4">
+                <!-- Primary Button -->
                 <button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Reset Password
                 </button>
