@@ -15,15 +15,15 @@ const showingNavigationDropdown = ref(false);
 <template>
     <div>
         <!-- Primary Navigation Menu -->
-        <header class="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
+        <header class="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6 dark:border-gray-800">
             <nav class="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
                 <Link :href="route('dashboard')">
-                    <ApplicationLogo class="block h-9 w-auto fill-current text-slate-800"/>
+                    <ApplicationLogo class="block size-9 text-slate-900 w-auto fill-current dark:text-slate-200"/>
                     <span class="sr-only">Acme Inc</span>
                 </Link>
 
                 <Link :href="route('dashboard')" :class="[
-                    route().current('dashboard') ? '' : 'text-slate-500 hover:text-slate-900 transition-colors',
+                    route().current('dashboard') ? 'dark:text-slate-200' : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 transition-colors',
                 ]">
                     Dashboard
                 </Link>
@@ -36,11 +36,11 @@ const showingNavigationDropdown = ref(false);
                         size="icon"
                         class="shrink-0 md:hidden"
                     >
-                        <Menu class="h-5 w-5" />
+                        <Menu class="h-5 w-5 dark:text-gray-200" />
                         <span class="sr-only">Toggle navigation menu</span>
                     </Button>
                 </SheetTrigger>
-                <SheetContent side="left">
+                <SheetContent side="left" class="dark:border-slate-800">
                     <VisuallyHidden>
                         <SheetHeader>
                             <SheetTitle>Mobile Menu</SheetTitle>
@@ -51,11 +51,11 @@ const showingNavigationDropdown = ref(false);
                     </VisuallyHidden>
                     <nav class="grid gap-6 text-lg font-medium">
                         <Link :href="route('dashboard')">
-                            <ApplicationLogo class="block h-9 w-auto fill-current text-slate-800"/>
+                            <ApplicationLogo class="block size-9 w-auto fill-current text-slate-900 dark:text-slate-200"/>
                             <span class="sr-only">Acme Inc</span>
                         </Link>
                         <Link :href="route('dashboard')" :class="[
-                            route().current('dashboard') ? '' : 'text-slate-500 hover:text-slate-900 transition-colors',
+                            route().current('dashboard') ? 'dark:text-slate-200' : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 transition-colors',
                         ]">
                             Dashboard
                         </Link>

@@ -74,10 +74,8 @@ const submit = () => {
                             <Link
                                 v-if="canResetPassword"
                                 :href="route('password.request')"
-                                class="underline text-xs text-slate-600 hover:text-slate-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                            >
-                                Forgot your password?
-                            </Link>
+                                class="underline text-xs text-slate-600 hover:text-slate-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:text-slate-400 dark:hover:text-slate-100"
+                            >Forgot your password?</Link>
                         </div>
 
                         <Input
@@ -115,9 +113,8 @@ const submit = () => {
                             <span>Don't have an account?</span>
                             <Link
                                 :href="route('register')"
-                                class="underline text-sm text-slate-600 hover:text-slate-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                            >Sign up
-                            </Link>
+                                class="underline text-sm text-slate-600 hover:text-slate-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:text-slate-400 dark:hover:text-slate-100"
+                            >Sign up</Link>
                         </div>
                     </div>
                 </CardFooter>

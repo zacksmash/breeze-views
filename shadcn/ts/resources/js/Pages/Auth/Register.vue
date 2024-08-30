@@ -123,9 +123,8 @@ const submit = () => {
                             <span>Already registered?</span>
                             <Link
                                 :href="route('login')"
-                                class="underline text-sm text-slate-600 hover:text-slate-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                            >Log in
-                            </Link>
+                                class="underline text-sm text-slate-600 hover:text-slate-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:text-slate-400 dark:hover:text-slate-100"
+                            >Log in</Link>
                         </div>
                     </div>
                 </CardFooter>
