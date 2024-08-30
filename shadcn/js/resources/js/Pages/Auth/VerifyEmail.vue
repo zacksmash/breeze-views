@@ -62,9 +62,8 @@ const verificationLinkSent = computed(() => props.status === 'verification-link-
               method="post"
               as="button"
               class="rounded-md text-sm text-slate-600 underline hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-slate-400 dark:hover:text-slate-100"
-            >
-              Log Out
-            </Link>
+              v-text="'Log Out'"
+            />
           </div>
         </form>
       </CardContent>

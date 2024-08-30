@@ -86,9 +86,8 @@ const submit = () => {
                 v-if="canResetPassword"
                 :href="route('password.request')"
                 class="rounded-md text-xs text-slate-600 underline hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-slate-400 dark:hover:text-slate-100"
-              >
-                Forgot your password?
-              </Link>
+                v-text="'Forgot your password?'"
+              />
             </div>
 
             <Input
@@ -138,9 +137,8 @@ const submit = () => {
               <Link
                 :href="route('register')"
                 class="rounded-md text-sm text-slate-600 underline hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-slate-400 dark:hover:text-slate-100"
-              >
-                Sign up
-              </Link>
+                v-text="'Sign up'"
+              />
             </div>
           </div>
         </CardFooter>
