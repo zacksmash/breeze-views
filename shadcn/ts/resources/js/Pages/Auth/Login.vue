@@ -107,15 +107,16 @@ const submit = () => {
           </div>
 
           <div class="mt-4 block">
-            <Label class="flex items-center gap-2">
+            <div class="flex items-center space-x-2">
               <Checkbox
+                id="remember-field"
                 v-model="form.remember"
                 name="remember"
                 tabindex="1"
               />
 
-              <span>Remember me</span>
-            </Label>
+              <Label for="remember-field">Remember Me</Label>
+            </div>
           </div>
         </CardContent>
 
