@@ -29,7 +29,7 @@ import { Link } from '@inertiajs/vue3'
 <template>
   <div class="min-h-screen bg-white dark:bg-slate-950">
     <!-- Primary Navigation Menu -->
-    <header class="sticky top-0 border-b px-4 dark:border-slate-800 sm:px-6">
+    <header class="sticky top-0 border-b bg-white px-4 dark:border-slate-800 dark:bg-gray-950 sm:px-6">
       <div class="mx-auto flex h-16 max-w-7xl items-center gap-4">
         <nav class="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <Link :href="route('dashboard')">
